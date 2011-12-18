@@ -1,0 +1,18 @@
+<archetype>
+    <id>spring-webmvc-basic</id>
+    <sources>
+        <source>src/main/java/SiteController.java</source>
+    </sources>
+    <resources>
+        <resource>src/main/resources/logback.xml</resource>
+        <resource>src/main/resources/webapp.properties</resource>
+        <resource>src/main/webapp/WEB-INF/applicationContext.xml</resource>
+        <resource>src/main/webapp/WEB-INF/dispatcherContext.xml</resource>
+        <resource>src/main/webapp/WEB-INF/web.xml</resource>
+        <resource>src/main/webapp/WEB-INF/freemarker/index.ftl</resource>
+        <resource>run</resource>
+    </resources>
+    <testSources>
+        <source>src/test/java/SiteControllerTest.java</source>
+    </testSources>
+</archetype>

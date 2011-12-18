@@ -1,0 +1,10 @@
+#!/bin/sh
+# A handy exec script to start up the webapp in jetty, with a remote debugging port open
+#
+
+export MAVEN_OPTS="-Xms128m -Xmx128m -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8081"
+
+# To use an external logback configuration, add the following property to MAVEN_OPTS:
+# -Dlogback.configurationFile=path/to/logback.xml
+
+mvn jetty:run

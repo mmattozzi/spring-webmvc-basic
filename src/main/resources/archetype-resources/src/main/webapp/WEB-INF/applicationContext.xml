@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation=
+           "http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+    <!-- Switch on the @Required annotation  -->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+    <!-- Fill in properties -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" ref="configurationLocations"/>
+        <property name="nullValue" value=""/>
+        <property name="ignoreResourceNotFound" value="true"/>
+    </bean>
+
+    <!-- Service configuration properties -->
+    <util:list id="configurationLocations">
+        <!-- bundled defaults in classpath -->
+        <value>classpath:webapp.properties</value>
+        <!-- external config overrides bundled defaults -->
+        <value>file:config/webapp.properties</value>
+    </util:list>
+
+</beans>
+

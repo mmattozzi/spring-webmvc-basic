@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d %-5p [%t] %c: %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.mortbay" level="ERROR" />
+    <logger name="org.apache" level="ERROR" />
+
+    <root level="INFO">
+        <appender-ref ref="stdout" />
+    </root>
+
+</configuration>
